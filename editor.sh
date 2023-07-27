@@ -23,7 +23,6 @@
 
 function launchEditor () {
     local filePath="$@"
-		echo $filePath
 
     osascript &>/dev/null <<EOF
 			#use application iTerm (change to iTerm2 if needed)
