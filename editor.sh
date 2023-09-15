@@ -25,26 +25,28 @@ function launchEditor () {
     local filePath="$@"
 
     osascript &>/dev/null <<EOF
-			#use application iTerm (change to iTerm2 if needed)
+                        say "The time is eight fourty two in the morning. Have an amazing day. You got this. If anybody has this.... it's you."
+   
+			## use application iTerm (change to iTerm2 if needed)
 			tell application "iTerm"
 			
 				if name of current session of current window contains "nvim" then
-				#already in nvim just split the window (I prefer vsplit)
+				## already in nvim just split the window (I prefer vsplit)
 
 					tell current session of current window
 						write text ":vsplit $filePath"
 					end tell
 
 				else
-				#need to open nvim 
+				## need to open nvim 
 
 					tell current session of current window
-						write text "nvim $filePath"
+						write text "nvim $filePath" 
 					end tell
 
 				end if
 
-				#focus the window
+				## focus the window
 				activate current window 
 
 			end tell
